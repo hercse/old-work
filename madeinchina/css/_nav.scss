@@ -1,0 +1,105 @@
+.nav {
+    z-index: 1000;
+    padding: 0px 2vw;
+    box-sizing: border-box;
+    color: $text-color;
+    height: 10vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: $theme-color;
+    border-bottom: $theme-color-05 solid 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        color: white;
+        text-decoration: transparent;
+    }
+    .title {
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        opacity: 1;
+        transition: .1s;
+        &:hover {
+            opacity: .5;
+        }
+        // height: 40px;
+        img {
+            height: 50px;
+            margin-top: 6px;
+        }
+    }
+    @include media_mobile {
+        @include m-menu-icon;
+    }
+    @include media_pad {
+        @include m-menu-icon;
+    }
+    @include media_pc {
+        .open {
+            display: none;
+        }
+    }
+    .menu {
+        @include media_mobile {
+            @include m-menu;
+        }
+        @include media_pad {
+            @include m-menu;
+        }
+        .mobile {
+            display: none;
+            height: 100%;
+        }
+        display: flex;
+        font-size: 18px;
+        letter-spacing: 3px;
+        font-weight: 500;
+        transition: .7s .2s !important;
+        // align-content: center;
+        .item {
+            // height: 20px;
+            margin: 0px 10px;
+            transition: .25s;
+            display: block;
+            height: 100%;
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+    .dropdown {
+        background-color: rgba(0, 0, 0, 0.432);
+        position: absolute;
+        height: 5vh;
+        width: 100%;
+        box-sizing: border-box;
+        bottom: -5vh;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 2vw;
+        .menu {
+            display: flex;
+            font-size: 18px;
+            letter-spacing: 3px;
+            font-weight: 500;
+            // align-content: center;
+            .item {
+                // height: 20px;
+                margin: 0px 10px;
+                transition: .25s;
+                display: block;
+                &:hover {
+                    opacity: .5;
+                }
+            }
+        }
+        .hover {
+            height: 0;
+        }
+    }
+}

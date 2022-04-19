@@ -1,0 +1,237 @@
+// 規則函數
+@mixin media_pc {
+    @media screen and (min-width: 1401px) {
+        @content;
+    }
+}
+
+@mixin media_pad {
+    @media screen and (max-width: 1400px) and (min-width: 901px) {
+        @content;
+    }
+}
+
+@mixin media_mobile {
+    @media screen and (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin hw_100 {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin flex_c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+@mixin pos_a_c {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+// 非規則函數
+@mixin pro_items_list {
+    &:nth-child(1) {
+        .title {
+            &::after {
+                content: $pro_01-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_01-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_01-images;
+        }
+    }
+    &:nth-child(2) {
+        .title {
+            &::after {
+                content: $pro_02-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_02-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_02-images;
+        }
+    }
+    &:nth-child(3) {
+        .title {
+            &::after {
+                content: $pro_03-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_03-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_03-images;
+        }
+    }
+    &:nth-child(4) {
+        .title {
+            &::after {
+                content: $pro_04-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_04-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_04-images;
+        }
+    }
+    &:nth-child(5) {
+        .title {
+            &::after {
+                content: $pro_05-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_05-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_05-images;
+        }
+    }
+    &:nth-child(6) {
+        .title {
+            &::after {
+                content: $pro_06-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_06-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_06-images;
+        }
+    }
+    &:nth-child(7) {
+        .title {
+            &::after {
+                content: $pro_07-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_07-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_07-images;
+        }
+    }
+    &:nth-child(8) {
+        .title {
+            &::after {
+                content: $pro_08-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_08-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_08-images;
+        }
+    }
+    &:nth-child(9) {
+        .title {
+            &::after {
+                content: $pro_09-text;
+            }
+        }
+        .sub {
+            &::after {
+                content: $pro_09-texts;
+            }
+        }
+        .bg {
+            background-image: $pro_09-images;
+        }
+    }
+}
+
+@mixin m-menu {
+    opacity: 1;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100%;
+    background-color: $theme-color !important;
+    z-index: 10000 !important;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    &.m-none {
+        opacity: 0 !important;
+        top: -100vh;
+        height: 0;
+    }
+    .item {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-size: 3vh;
+        letter-spacing: 2vw !important;
+        height: 20% !important;
+        &:hover {
+            letter-spacing: 5vw !important;
+            margin-right: -3vw;
+        }
+    }
+    .mobile {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        &.m-logo {
+            font-size: 5vh;
+            font-weight: 900;
+            letter-spacing: 3vw;
+        }
+        &.m-close {
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin m-menu-icon {
+    .open {
+        margin-right: 2vw;
+        font-weight: 900;
+        font-size: 20px;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        svg {
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+        @mixin b-2 {
+            &.b-2 {
+                @include media_mobile {
+                    height: 60vh;
+                }
+                height: 30vw;
+                width: 100%;
+                color: $text-color;
+                background-color: $theme-color;
+                position: relative;
+                background-image: url("../images/b1.jpg");
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                * {
+                    transition: .5s;
+                }
+                &:hover {
+                    .bg {
+                        // background-color: $theme-color-08;
+                        @include hw_100;
+                        .png img {
+                            position: absolute;
+                            top: -20%;
+                            left: 0%;
+                            opacity: .1;
+                            @include media_mobile {
+                                top: 0%;
+                                left: 0%;
+                                height: 50vh;
+                            }
+                        }
+                    }
+                    .text {
+                        p {
+                            padding-left: 20px;
+                        }
+                        h2 {
+                            padding-right: 20px;
+                        }
+                    }
+                }
+                .bg {
+                    background-color: $theme-color-08;
+                    height: 100%;
+                    width: 100%;
+                    .png img {
+                        @include media_mobile {
+                            top: 10%;
+                            left: -10%;
+                            height: 50vh;
+                        }
+                        position: absolute;
+                        top: -10%;
+                        left: -5%;
+                        height: 50vw;
+                        opacity: .4;
+                    }
+                }
+                .text {
+                    margin: auto;
+                    @include flex_c;
+                    @include pos_a_c;
+                    h2 {
+                        margin: 40px;
+                        display: block;
+                        text-align: center;
+                        font-weight: 800;
+                        font-size: 60px;
+                        font-style: italic;
+                        letter-spacing: 20px;
+                        @include media_mobile {
+                            font-size: 30px;
+                            margin: 10px;
+                        }
+                    }
+                    p {
+                        position: relative;
+                        right: 0;
+                        margin: 0 auto;
+                        display: block;
+                        text-align: center;
+                        font-weight: 500;
+                        font-size: 25px;
+                        font-style: italic;
+                        letter-spacing: 20px;
+                        @include media_mobile {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }

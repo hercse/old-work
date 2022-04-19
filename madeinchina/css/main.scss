@@ -1,0 +1,205 @@
+// 函式庫
+@import "mixin";
+// 變數庫
+@import "variable";
+@import "nav";
+@import "headers";
+@import "product/product";
+// 首頁
+@import "index/block-1";
+@import "index/block-2";
+@import "index/block-3";
+@import "index/block-4";
+// 商品
+// 字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // height: 2000vh;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+@include headers;
+.index {
+    width: 100%;
+    .block {
+        overflow: hidden;
+        box-sizing: border-box;
+        @include b-1; // 匯入區塊
+        @include b-2;
+        @include b-3;
+        @include b-4;
+    }
+}
+
+.load {
+    @keyframes loading {
+        from {
+            transform: rotate (0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    &.none {
+        opacity: .0;
+        z-index: -10;
+        img {
+            width: 0px;
+            height: 0px;
+        }
+    }
+    opacity: 1;
+    transition: .5s;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255,
+    255,
+    255);
+    // backdrop-filter: blur(10px);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 99999999999;
+    img {
+        animation: loading infinite 1s linear;
+        width: 10vh;
+        height: 10vh;
+        transition: .5s;
+    }
+}
+
+.support {
+    &.header {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        .bg {
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-image: url("../images/olenka-kotyk-iRguZkRTQyA-unsplash.jpg");
+        }
+        .title {
+            padding: 0 10vw;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            h1 {
+                font-weight: 900;
+                letter-spacing: 5px;
+                font-size: 50px;
+            }
+        }
+    }
+    >h1 {
+        width: 100%;
+        text-align: center;
+        margin: 8vh 0;
+    }
+    .drop {
+        box-sizing: border-box;
+        padding: 0 20vw;
+        .item {
+            // background-color: yellow;
+            margin: 20px 0;
+            // padding-bottom: 20px;
+            &.dr-open {
+                .concent {
+                    height: auto;
+                    padding: 20px 20px;
+                }
+            }
+            &.dr-close {
+                .concent {
+                    height: 0;
+                }
+            }
+            .title {
+                cursor: pointer;
+                border-radius: 8px 8px 0 0;
+                background-color: $theme-color;
+                padding: 10px 20px;
+                color: white;
+                font-weight: 500;
+                font-size: 20px;
+                // margin: 20px 0;
+            }
+            .concent {
+                transition: .2s;
+                height: 0;
+                border-radius: 0 0 8px 8px;
+                $support-drop-border: black solid 1px;
+                overflow: hidden;
+                // margin: 20px 0;
+                background-color: white;
+                border-left: $support-drop-border;
+                border-right: $support-drop-border;
+                border-bottom: $support-drop-border;
+            }
+        }
+    }
+}
+
+.footer {
+    height: 50vh;
+    min-height: 500px;
+    width: 100%;
+    background-color: $theme-color;
+    display: flex;
+    overflow: hidden;
+    @include media_mobile {
+        flex-flow: column;
+        height: auto;
+    }
+    color: white;
+    text-transform: uppercase;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    .logo {
+        padding: 5% 3%;
+        width: 100%;
+        img {
+            width: 50%;
+            height: auto;
+            cursor: pointer;
+        }
+    }
+    .list {
+        width: 100%;
+        padding: 3%;
+        p {
+            cursor: pointer;
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
