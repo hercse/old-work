@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>舊網站作品：Already Know</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="search">
+    <div class="background">
+        <div class="bgmenu"></div>
+    </div>
+    <div class="content">
+        <div class="scence title01" v-bind:class="{z1000: isZture}">
+            <transition name="sdm">
+                <div v-if="show" onclick="atob(title01,menu01)">
+                    <div class="main">
+                        <div class="title-text">
+                            <p>高中作品</p>
+                            <h1>already know</h1>
+                            <p>絕對知道</p>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+        </div>
+        <div class="scence menu01" v-bind:class="{z1000: isZture}">
+            <transition name="sdm">
+                <div v-if="show">
+                    <div class="main">
+                        <h1>I have a <b onclick="atob(menu01, thought_page)">Thought</b>, than<br> I can <b>Make it</b> into a <b>Work</b>.</h1>
+                    </div>
+                </div>
+            </transition>
+        </div>
+        <div class="scence thought_page" v-bind:class="{z1000: isZture}">
+            <transition name="sdm">
+                <div v-if="show">
+                    <div class="main">
+                        <img src="./untitled.png" alt="">
+                    </div>
+                </div>
+            </transition>
+        </div>
+    </div>
+
+</body>
+<script src="test.js"></script>
+
+</html>
